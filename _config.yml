@@ -15,7 +15,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://bitwiser.in" # the base hostname & protocol for your site
 twitter_username: brijeshb42
 github_username:  brijeshb42
-
+sass:
+  style: compressed
 # Pagination
 paginate: 5
 paginate_path: "page:num"
