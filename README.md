@@ -1,7 +1,8 @@
 A jekyll theme built on the default jekyll theme and inspired by [Read WordPress theme](http://themes.pixelwars.org/read-wp/).
 
-Supports:
+Features:
 
+* Responsive Layout
 * Sitemap
 * Atom feed
 * Mailchimp Newsletter subscription
