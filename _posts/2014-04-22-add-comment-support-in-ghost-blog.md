@@ -11,7 +11,7 @@ tags: [ghost, blog, comment, disqus]
 
 We will be adding Disqus comments on our ghost blog.
 
-To add Disqus comments, signup at [Disqus](https://disqus.com/. You will be asked for a sitename. Enter your desired sitename. After this, you will be provided with a html/javascript snippet like this:
+To add Disqus comments, signup at [Disqus](https://disqus.com/). You will be asked for a sitename. Enter your desired sitename. After this, you will be provided with a html/javascript snippet like this:
 
 {% highlight html linenos %}
 <div id="disqus_thread"></div>
