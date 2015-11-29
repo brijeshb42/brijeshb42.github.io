@@ -22,4 +22,9 @@ paginate_path: "page:num"
 # Build settings
 markdown: kramdown
 
+# Newsletter URL
 mailchimp: "//bitwiser.us10.list-manage.com/subscribe/post?u=98dffea21944db66c8fa221ec&amp;id=8cc0f04ed1"
+
+# Analytics
+ga_id: UA-47902363-1
+ga_domain: bitwiser.in

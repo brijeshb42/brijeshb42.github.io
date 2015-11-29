@@ -39,6 +39,9 @@
       });
     })(window, document);
     </script>
+    {% if site.ga_id %}
+      {% include analytics.html %}
+    {% endif %}
   </body>
 
 </html>
