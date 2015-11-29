@@ -24,6 +24,10 @@ layout: default
     <div style="position: absolute; left: -5000px;"><input type="text" name="b_98dffea21944db66c8fa221ec_8cc0f04ed1" tabindex="-1" value=""></div>
     <p><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="mui-btn mui-btn-primary"></p>
   </form>
+  {% if site.disqus %}
+    <p class="comment-begin"><a href="#" id="showComments"><i class="fa fa-comment-o"></i>Comments</a></p>
+    <div id="disqus_thread"></div>
+  {% endif %}
   </footer>
   {% endif %}
 

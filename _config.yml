@@ -28,3 +28,4 @@ mailchimp: "//bitwiser.us10.list-manage.com/subscribe/post?u=98dffea21944db66c8f
 # Analytics
 ga_id: UA-47902363-1
 ga_domain: bitwiser.in
+disqus: bitwiser

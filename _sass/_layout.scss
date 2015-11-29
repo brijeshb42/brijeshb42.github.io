@@ -418,8 +418,12 @@
         padding-top: 20px;
         
         .subscribe-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #F3F3F3;
+            padding: 20px;
             input[type=email] {
-                max-width: 400px;
+                max-width: 450px;
             }
             input[type=submit] {
                 max-width: 100px;
@@ -429,6 +433,10 @@
                 font-size: 1.2em;
             }
         }
+    }
+
+    .comment-begin {
+        text-align: center;
     }
 }
 
