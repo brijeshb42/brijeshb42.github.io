@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+    <script type="text/javascript">
+    (function(w, d) {
+      var liWithMenu = d.querySelectorAll('.has-submenu');
+      for(var i=0; i<liWithMenu.length; i++) {
+        liWithMenu[i].addEventListener('click', function(e) {
+          e.stopPropagation();
+          var submenu = this.querySelector('.submenu');
+          //this.classList.toggle('link-active');
+          if(submenu) {
+            if(submenu.style.display === 'block') {
+              submenu.style.display = 'none';
+              return;
+            }
+            submenu.style.display = 'block';
+          }
+        });
+      }
+      d.addEventListener('click', function(e) {
+        var submenus = d.querySelectorAll('.submenu');
+        for(var i=0;i<submenus.length;i++) {
+          submenus[i].style.display = 'none';
+        }
+      });
+    })(window, document);
+    </script>
+  </body>
+
+</html>
