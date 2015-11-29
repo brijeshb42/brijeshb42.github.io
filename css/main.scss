@@ -53,6 +53,17 @@ $on-laptop:        800px;
 ;
 
 
+.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+
+    .btn-large {
+        font-size: 1.2em;
+        padding: 10px 20px;
+    }
+}
+
 .highlight {
     border: 0;
     pre {

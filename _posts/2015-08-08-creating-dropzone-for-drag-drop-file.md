@@ -10,8 +10,8 @@ tags: [javascript, dragndrop, fileupload]
 
 This tutorial will show how to enable a particular `div` (or any other tag) on a webpage to accept files that are dropped on them.
 
-<a href="http://bitwiser.in/tutorial-demos/2015/08/08/drag-n-drop-demo.html" class="mui-btn mui-btn-primary mui-btn-lg" target="_blank">Demo</a>
-<a href="https://raw.githubusercontent.com/brijeshb42/tutorial-demos/gh-pages/_posts/2015-08-08-drag-n-drop-demo.md" class="mui-btn mui-btn-accent mui-btn-lg" target="_blank">Code</a>
+<a href="http://bitwiser.in/tutorial-demos/2015/08/08/drag-n-drop-demo.html" class="btn btn-large" target="_blank">Demo</a>
+<a href="https://raw.githubusercontent.com/brijeshb42/tutorial-demos/gh-pages/_posts/2015-08-08-drag-n-drop-demo.md" class="btn btn-large" target="_blank">Code</a>
 
 We all have encountered websites that allow us to upload files (mostly images) to their servers by directly dragging the file from some application (mainly file explorer of the OS) to a desginated area on the web page. This a replacement of the good old `<input type="file" />` elements inside forms. **Drag and drop** is an HTML5 standard.
 
