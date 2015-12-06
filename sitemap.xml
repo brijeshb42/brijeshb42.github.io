@@ -14,22 +14,6 @@
       <priority>0.9</priority>
     </url>
   {% endfor %}
-  {% for page in site.pages %}
-    {% if page.sitemap != null and page.sitemap != empty %}
-      <url>
-        <loc>{{ site.url }}{{ page.url }}</loc>
-        <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
-        <changefreq>{{ page.sitemap.changefreq }}</changefreq>
-        <priority>{{ page.sitemap.priority }}</priority>
-       </url>
-    {% endif %}
-  {% endfor %}
-  <url>
-    <loc>{{ site.url }}/tvm/</loc>
-    <lastmod>2014-07-12T11:20:35-07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
   {% for project in site.data.projects %}
   <url>
     <loc>{{ site.url }}{{project.url}}</loc>
@@ -38,10 +22,12 @@
   </url>
   {% endfor %}
   {% for my_page in site.pages %}
-  <url>
-    <loc>{{ site.url }}{{my_page.url}}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+    {% if my_page.title %}
+    <url>
+      <loc>{{ site.url }}{{my_page.url}}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+    {% endif %}
   {% endfor %}
 </urlset>
