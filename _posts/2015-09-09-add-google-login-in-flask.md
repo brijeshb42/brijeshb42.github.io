@@ -14,7 +14,7 @@ To get started, first we have to create a project in Google Developers Console t
 
 ### Creating a Google project
 
-1. First go to [Google Developers Console](https://console.developers.google.com/). Sign in using your Google credentials if you haven't already. There will be a list of projects(of you have previously created any.).
+1. First go to [Google Developers Console](https://console.developers.google.com/). Sign in using your Google credentials if you haven't already. There will be a list of projects(if you have previously created any).
 
 2. Click on **Create Project** to create a new project.
 ![Project Screen](http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/1.png)
@@ -217,9 +217,9 @@ In the above code,
 
 * We check if a user is already logged in. If yes, we then redirect them to the home page.
 * Then we check if the url has an `error` query parameter. This check is done to handle cases where a user after going to the Google login page, denies access. We then return an appropriate message to the user.
-* We then check is the url contains `code` and `state` parameters or not. If these are not in the URL, this means that someone tried to access the URL directly. So we redirect them to the login page.
+* We then check if the url contains `code` and `state` parameters or not. If these are not in the URL, this means that someone tried to access the URL directly. So we redirect them to the login page.
 * After handling all the side cases, we finally handle the case where the user has successfully authenticated our app.
-    * In this case, we create a new `OAuth2Session` object by passing the `state` paramete.
+    * In this case, we create a new `OAuth2Session` object by passing the `state` parameter.
     * Then we try to get an `access_token` from Google using
 {% highlight python %}
 token = google.fetch_token(
