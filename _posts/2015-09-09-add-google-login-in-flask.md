@@ -52,7 +52,7 @@ class User(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.datetime.utcnow())
 {% endhighlight %}
 
-The `tokens` column stores the access and refresh tokens JSON dumped as string.
+The `tokens` column stores the access and refresh tokens JSON, dumped as string.
 
 
 ### Creating configuration for our app.
@@ -150,7 +150,7 @@ def index():
     return render_template('index.html')
 {% endhighlight %}
 
-This route is only served to logged in user. If a user is not logged in, they are redirected to `login` root as set previously using `login_manager.login_view = "login"`.
+This route is only served to logged in user. If a user is not logged in, they are redirected to `login` route as set previously using `login_manager.login_view = "login"`.
 
 ### Login URL:
 {% highlight python %}
