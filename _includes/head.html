@@ -39,7 +39,7 @@
   {% if site.disqus %}
   <script type="text/javascript">
     window.APP = {
-      PAGE_URL: "{{page.url}}",
+      PAGE_URL: "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}",
       PAGE_IDENTIFIER: "{{page.url}}"
     };
   </script>
