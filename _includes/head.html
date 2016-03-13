@@ -36,4 +36,12 @@
   <meta name="twitter:image" content="{{ "sharer.png" | prepend: site.baseurl | prepend: site.url }}" />
   {% endif %}
   <meta name="twitter:card" content="summary" />
+  {% if site.disqus %}
+  <script type="text/javascript">
+    window.APP = {
+      PAGE_URL: "{{page.url}}",
+      PAGE_IDENTIFIER: "{{page.url}}"
+    };
+  </script>
+  {% endif %}
 </head>
