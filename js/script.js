@@ -14,10 +14,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       if(disqus_shortname === ''){
           disqus_shortname = '{{ site.disqus }}';
           dt.innerHTML = 'Loading comments...';
-          var disqus_config = function () {
-              this.page.url = window.APP.PAGE_URL;
-              this.page.identifier = window.APP.PAGE_IDENTIFIER;
-          };
           (function() {
               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
               dsq.setAttribute('data-timestamp', +new Date());
