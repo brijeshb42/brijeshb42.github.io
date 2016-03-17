@@ -143,7 +143,7 @@ def get_google_auth(state=None, token=None):
 * If `token` is provided, that means we only have to get an `access_token` and this is the final step.
 
 ### Root URL:
-{% highlight python %}
+{% highlight python linenos %}
 @app.route('/')
 @login_required
 def index():
@@ -153,7 +153,7 @@ def index():
 This route is only served to logged in user. If a user is not logged in, they are redirected to `login` route as set previously using `login_manager.login_view = "login"`.
 
 ### Login URL:
-{% highlight python %}
+{% highlight python linenos %}
 @app.route('/login')
 def login():
     if current_user.is_authenticated:
@@ -239,7 +239,7 @@ resp = google.get(Auth.USER_INFO)
 {% endhighlight %}
 
 The user information is a JSON of the form:
-{% highlight json %}
+{% highlight json linenos %}
 {
   "family_name": "Doe", 
   "name": "John Doe", 
