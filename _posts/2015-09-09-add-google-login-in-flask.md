@@ -156,7 +156,7 @@ This route is only served to logged in user. If a user is not logged in, they ar
 {% highlight python %}
 @app.route('/login')
 def login():
-    if current_user.is_authenticated():
+    if current_user.is_authenticated:
         return redirect(url_for('index'))
     google = get_google_auth()
     auth_url, state = google.authorization_url(
@@ -174,7 +174,7 @@ Here, the route `gCallback` must be the same as we mentioned in our project page
 @app.route('/gCallback')
 def callback():
     # Redirect user to home page if already logged in.
-    if current_user is not None and current_user.is_authenticated():
+    if current_user is not None and current_user.is_authenticated:
         return redirect(url_for('index'))
     if 'error' in request.args:
         if request.args.get('error') == 'access_denied':
