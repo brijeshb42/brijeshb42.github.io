@@ -40,7 +40,7 @@ To get started, first we have to create a project in Google Developers Console t
 We will be using [flask-sqlalchemy](https://pythonhosted.org/Flask-SQLAlchemy/) to handle DB operations.
 This is what our `User` table looks like.
 
-{% highlight python %}
+{% highlight python linenos %}
 class User(db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
@@ -60,7 +60,7 @@ The `tokens` column stores the access and refresh tokens JSON, dumped as string.
 If using `flask-login` to manage user sessions, we can check whether a user is logged in or not. If not logged in, we redirect the user to a login page that contains the link to Google login.
 Lets create a `config.py` that has our Google OAuth credentials and our app configuration.
 
-{% highlight python %}
+{% highlight python linenos %}
 import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -110,7 +110,7 @@ Here,
 
 After the configuration is done, we have to create a `Flask` app, load configurations and finally define our routes.
 
-{% highlight python %}
+{% highlight python linenos %}
 app = Flask(__name__)
 app.config.from_object(config['dev'])
 db = SQLAlchemy(app)
@@ -122,7 +122,7 @@ login_manager.session_protection = "strong"
 ### `requests_oauthlib.OAuth2Session` helper:
 We create a helper function `get_google_auth` that we will use to create `OAuth2Session` object based on the arguments provided.
 
-{% highlight python %}
+{% highlight python linenos %}
 def get_google_auth(state=None, token=None):
     if token:
         return OAuth2Session(Auth.CLIENT_ID, token=token)
