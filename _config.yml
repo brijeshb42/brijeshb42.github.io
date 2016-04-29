@@ -8,7 +8,7 @@
 # Site settings
 gems: [jekyll-paginate]
 title: Bitwiser.in
-email: brijeshb42@gmail.com
+email: brijesh@bitwiser.in
 description: > # this means to ignore newlines until "baseurl:"
   A blog about Life, Universe and Coding.
 baseurl: "" # the subpath of your site, e.g. /blog
