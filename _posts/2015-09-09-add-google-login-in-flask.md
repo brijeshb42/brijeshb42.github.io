@@ -29,7 +29,7 @@ To get started, first we have to create a project in Google Developers Console t
 ![OAuth Credentials](http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/4.png)
 
 6. Select `Application Type` as **Web Application**, Provide a `Name`, `Authorized Javascript origins` and `Authorized redirect URIs` and click on `Create`. During development, we will use `localhost` as our URL. Later, for production, we can add our original URL. The `redirect URIs` is important here as this is the URL the users will be redirected to after Google Login. Make sure that all the urls use `https` protocol as `OAuth2` supports only `https`.
-![Create credentials](http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/5.png)
+![Create credentials](http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/cbb41861-fe1e-4e8a-b633-41cf7ba5af54.png)
 
 7. After the above step, you will be presented with a dialog box having your `client ID` and `client secret`. Copy both the strings and save in a text file as we will be needing these later.
 ![Copy credentials](http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/6.png)
@@ -279,4 +279,17 @@ Finally create a file `run.py` in the same directory as `app.py` and add the fol
 {% highlight python %}
 from app import app
 app.run(debug=True, ssl_context=('./ssl.crt', './ssl.key'))
+{% endhighlight %}
+
+#### Edit
+
+From the comments, I have come to know that many of you have been running into problems with successfully running the flask server. It was a mistake from my side which I have realized in last few days.
+
+In Step 6 above, while adding a redirect uri in the **Google Project Console**, I attached a screenshot in which, the `redirect uri` was `http://localhost:5000/gCallback` instead of it starting with `https`. So I have updated the screenshot in which I have added both `http` and `https`. You should add both `http` and `https` URLs as redirect uri. Also add both `http://localhost:5000` and `https://localhost:5000` in the **Authorized Javascript Origins**.
+
+Also if you want to simply run the flask server on http instead of https, add the following 2 lines of code at the top of your `app.py`
+
+{% highlight python %}
+import os
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 {% endhighlight %}
