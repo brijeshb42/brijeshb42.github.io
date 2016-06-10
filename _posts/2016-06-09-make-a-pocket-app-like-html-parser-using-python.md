@@ -108,7 +108,7 @@ def extract_url():
 
 * Instead of checking the url for just empty string, we can also use regex to verify that the url, is in fact a url.
 * We should also check that the `url` is not for our own domain as it will lead to an infinite loop calling the same `extract_url` function again and again.
-* `newspaper` will not always be extract the most relevant html. Its functionality completely depends on how the content is organized in the source `url`'s website. Sometimes, it may give one or two extra paragraphs or sometimes less. But for most of the standard news websites and blogs, it will always return the most relevant html.
+* `newspaper` will not always be able to extract the most relevant html. Its functionality completely depends on how the content is organized in the source `url`'s website. Sometimes, it may give one or two extra paragraphs or sometimes less. But for most of the standard news websites and blogs, it will always return the most relevant html.
 
 
 #### Things to do next
