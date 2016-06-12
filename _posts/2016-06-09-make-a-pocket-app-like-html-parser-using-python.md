@@ -98,7 +98,7 @@ def extract_url():
 {% endhighlight %}
 
 1. We first create a `Flask` app.
-2. In its `index` route we return a simple form with text input where users will paste th url and then submit the form to the `/extract` route specified in `action`.
+2. In its `index` route we return a simple form with text input where users will paste the url and then submit the form to the `/extract` route specified in `action`.
 3. In the `extract_url` function, we get the `url` from `request.args` and check if it is empty. If empty, we return an error. Otherwise will pass the `url` to our `extract` function that we created and then return the result using `jsonify`.
 4. Now you can simply run `python app.py` and head over to [http://localhost:5000](http://localhost:5000) in your browser it test the implemetation.
 
