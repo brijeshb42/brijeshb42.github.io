@@ -10,7 +10,7 @@ gems: [jekyll-paginate]
 title: Bitwiser.in
 email: brijesh@bitwiser.in
 description: > # this means to ignore newlines until "baseurl:"
-  A blog about Life, Universe and Coding.
+  A blog about Life, Universe and Coding. But mostly Coding.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://bitwiser.in" # the base hostname & protocol for your site
 twitter_username: brijeshb42
