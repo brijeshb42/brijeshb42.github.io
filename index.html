@@ -10,7 +10,8 @@ layout: default
         <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" itemprop="name headline">{{ post.title }}</a></h2>
       </header>
       <section>
-      <p><time datetime="{{post.date | date_to_xmlschema}}" class="post-meta" itemprop="datePublished">{{post.date | date:"%B %-d, %Y" }}</time></p>
+      <p><time datetime="{{post.date | date_to_xmlschema}}" class="post-meta" itemprop="datePublished">{{post.date | date:"%B %-d, %Y" }}</time> &middot; <em>{% assign words = post.content | number_of_words %}
+          {% if words < 360 %}1 min{% else %}{{ words | divided_by:250 }} mins{% endif %} read</em></p>
       {% if post.cover and post.cover != "" %}
         <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
         <figure itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
