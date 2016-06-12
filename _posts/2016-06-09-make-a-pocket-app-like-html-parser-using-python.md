@@ -29,7 +29,7 @@ We will be working in the global Python environment for simplicity of the tutori
 
 2. Create a file called `extractor.py` with the following code.
 
-{% highlight python linenos %}
+```python
 from newspaper import Article, Config
 
 config = Config()
@@ -47,11 +47,11 @@ def extract(url):
         image=article.top_image,
         authors=article.authors,
     )
-{% endhighlight %}
+```
 
 This is the only code we need for the main part thanks to `newspaper` which does all the heavy lifting. It identifies the html element containing the most relevant data, cleans it up, removes any `script`, `style` and other irrelevant tags that are not likely to make up the main article.
 
-In the above code `Article` is `newspaper`'s way of representing the article from a URL. By default, `newspaper` does not save the article content's html to save some extra processing. That is why we are importing `Config` from `newspaper` and creating a custom configuration telling `newspaper` to keep the article html in lines 3 and 4.
+In the above code `Article` is `newspaper`'s way of representing the article from a URL. By default, `newspaper` does not save the article content's html to save some extra processing. That is why we are importing `Config` from `newspaper` and creating a custom configuration telling `newspaper` to keep the article html using `config.keep_article_html = True`.
 
 * In the `extract` function that accepts a `url`, we first create an `Article` instance passing in the `url` and custom `config`.
 * Then we download the full article html with `article.download()`. `newspaper` still hasn't processed the full html yet.
@@ -62,7 +62,7 @@ In the above code `Article` is `newspaper`'s way of representing the article fro
 
 Now that we have created the functionality to extract articles, we will be making this available on the web so that we can test it out in our browsers. We will be using `flask` to make an API. Here is the code.
 
-{% highlight python linenos %}
+```python
 from flask import (
     Flask,
     jsonify,
@@ -80,8 +80,7 @@ def index():
     <form action="/extract">
         <input type="text" name="url" placeholder="Enter a URL" />
         <button type="submit">Submit</button>
-    </form>
-    """
+    </form>"""
 
 
 @app.route('/extract')
@@ -95,7 +94,7 @@ def extract_url():
 
  if __name__ == '__main__':
      app.run(debug=True, port=5000)
-{% endhighlight %}
+```
 
 1. We first create a `Flask` app.
 2. In its `index` route we return a simple form with text input where users will paste the url and then submit the form to the `/extract` route specified in `action`.
