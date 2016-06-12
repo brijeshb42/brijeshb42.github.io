@@ -44,4 +44,9 @@
     };
   </script>
   {% endif %}
+  {% if page.tags %}
+    {% for tag in page.tags %}
+  <meta property="article:tag" content="{{tag}}">
+    {% endfor %}
+  {% endif %}
 </head>
