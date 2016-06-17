@@ -1,4 +1,4 @@
----
+  ---
 ---
 document.addEventListener("DOMContentLoaded", function(event) {
   var cmtBtn = document.getElementById("showComments");
@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   cmtBtn.addEventListener("click", function(e){
       e.preventDefault();
-      loadDisqus(); 
+      loadDisqus();
+      ga('send', 'event', 'article', 'comment', 'Click');
   });
 
   var scrolling = false;
@@ -68,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           loadDisqus();
           clearInterval(interval);
           window.removeEventListener('scroll', enableScrolling);
+          ga('send', 'event', 'article', 'comment');
       }
   }, 400);
 });
