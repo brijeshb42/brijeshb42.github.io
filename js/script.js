@@ -1,4 +1,4 @@
-  ---
+---
 ---
 document.addEventListener("DOMContentLoaded", function(event) {
   var cmtBtn = document.getElementById("showComments");
@@ -62,15 +62,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
   window.addEventListener('scroll', enableScrolling);
 
   var interval = setInterval(function() {
-      if(!scrolling) {
-          return false;
-      }
-      if(isElementInViewport(cmtBtn)) {
-          loadDisqus();
-          clearInterval(interval);
-          window.removeEventListener('scroll', enableScrolling);
-          ga('send', 'event', 'article', 'comment');
-      }
+    if(!scrolling) {
+      return false;
+    }
+    if(isElementInViewport(cmtBtn)) {
+      loadDisqus();
+      clearInterval(interval);
+      window.removeEventListener('scroll', enableScrolling);
+      ga('send', 'event', 'article', 'comment');
+    }
   }, 400);
 });
 (function(w, d) {
