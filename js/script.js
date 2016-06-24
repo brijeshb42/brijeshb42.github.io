@@ -83,9 +83,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
       if(submenu) {
         if(submenu.style.display === 'block') {
           submenu.style.display = 'none';
+          ga('send', 'event', 'click', 'menu', 'close');
           return;
         }
         submenu.style.display = 'block';
+        ga('send', 'event', 'click', 'menu', 'open');
       }
     });
   }
