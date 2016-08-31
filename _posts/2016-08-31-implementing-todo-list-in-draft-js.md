@@ -291,7 +291,7 @@ const getDefaultBlockData = (blockType, initialData = {}) => {
 /*
 Changes the block type of the current block.
 */
-const resetBlockType = (editorState, newType = Block.UNSTYLED) => {
+const resetBlockType = (editorState, newType = 'unstyled') => {
   const contentState = editorState.getCurrentContent();
   const selectionState = editorState.getSelection();
   const key = selectionState.getStartKey();
