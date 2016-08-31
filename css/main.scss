@@ -74,8 +74,16 @@ $on-laptop:        800px;
         padding: 0;
     }
 
+    .lineno {
+        color: #b9b9b9;
+    }
+
     code {
         background: $code-bg-color;
+
+        .code {
+            padding-left: 10px;
+        }
     }
 
     table {
