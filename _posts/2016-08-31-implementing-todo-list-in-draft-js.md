@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "Implementing todo list in DraftJS"
+title: "Implementing todo list in Draft.js"
 cover: "http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/2abfadcb-d409-41d8-8a73-d9c07f07141d.png"
 date: 2016-08-31 05:30:00
 tags: [react, draftjs]
 ---
 
-In this tutorial, we will be using [DraftJS] [draft-js] to implement custom text blocks that will showcase the usage of block level metadata feature that comes with the latest [release](https://github.com/facebook/draft-js/releases/tag/v0.8.1) of DraftJS.
+In this tutorial, we will be using [Draft.js] [draft-js] to implement custom text blocks that will showcase the usage of block level metadata feature that comes with the latest [release](https://github.com/facebook/draft-js/releases/tag/v0.8.1) of Draft.js.
 
 <p><a href="http://codepen.io/brijeshb42/pen/amojWq" class="btn btn-large" target="_blank">Full Code</a></p>
 
-<p data-height="265" data-theme-id="dark" data-slug-hash="amojWq" data-default-tab="result" data-user="brijeshb42" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/brijeshb42/pen/amojWq/">DraftJS with Todos</a> by Brijesh Bittu (<a href="http://codepen.io/brijeshb42">@brijeshb42</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="amojWq" data-default-tab="result" data-user="brijeshb42" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/brijeshb42/pen/amojWq/">Draft.js with Todos</a> by Brijesh Bittu (<a href="http://codepen.io/brijeshb42">@brijeshb42</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 We will be implementing a Todo block where users will be presented with a check box besides each line of text which they can check or uncheck to mark that task as finished or unfinished respectively. The **Todo block** will look something like below :
@@ -33,7 +33,7 @@ p.todo input[type=checkbox] {
 }
 </style>
 <p class="todo">
-<input type="checkbox" checked readonly disabled> Create a rich text editor on top of DraftJS implementing advanced features.
+<input type="checkbox" checked readonly disabled> Create a rich text editor on top of Draft.js implementing advanced features.
 </p>
 
 <p class="todo">
@@ -41,19 +41,19 @@ p.todo input[type=checkbox] {
 </p>
 
 <p class="todo">
-<input type="checkbox"> Write some tutorials explaining DraftJS and ways of achieving custom features with it.
+<input type="checkbox"> Write some tutorials explaining Draft.js and ways of achieving custom features with it.
 </p>
 
 
 ### Assumption
 
-You know what [DraftJS] [draft-js] is.
+You know what [Draft.js] [draft-js] is.
 
 ### Requirements
 
 1. First we will have to allow users a way to add todo block or convert current text block into a todo block.
 
-    To implement this, we will utilise the `handleBeforeInput` method of the DraftJS `Editor` component. `handleBeforeInput` is called just before a new character is typed into the editor. It is passed in as argument, the character that was typed.
+    To implement this, we will utilise the `handleBeforeInput` method of the Draft.js `Editor` component. `handleBeforeInput` is called just before a new character is typed into the editor. It is passed in as argument, the character that was typed.
 
     So whenever `[]` is typed at the start of a line, we will convert that line into a todo block.
 
@@ -368,4 +368,4 @@ Now users can press <kbd>Command/CTRL</kbd> + <kbd>B or I or U</kbd> and the sty
 
 I have implemented above feature and many more advanced features in my project: [medium-draft](http://bitwiser.in/medium-draft/). Don't forget to check it out.
 
-[draft-js]: https://facebook.github.io/draft-js/ "DraftJS Home Page"
+[draft-js]: https://facebook.github.io/draft-js/ "Draft.js Home Page"
