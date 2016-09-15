@@ -124,14 +124,16 @@ const getBlockRendererFn = (getEditorState, onChange)
 /* Inside the constructor of MyTodoListEditor, add this property. */
 
 this.blockRenderMap = Map({
-    [TODO_BLOCK]: 'div',
+    [TODO_BLOCK]: {
+        element: 'div',
+    },
 }).merge(DefaultDraftBlockRenderMap);
 
 /* Add this method inside MyTodoListEditor*/
 
 blockStyleFn(block) {
     switch (block.getType()) {
-      case TODO_TYPE:
+      case TODO_BLOCK:
         return 'block block-todo';
       default:
         return 'block';
@@ -180,7 +182,9 @@ class MyTodoListEditor extends React.Component {
 
         /* blockRenderMap */
         this.blockRenderMap = Map({
-            [TODO_BLOCK]: 'div',
+            [TODO_BLOCK]: {
+                element: 'div',
+            },
         }).merge(DefaultDraftBlockRenderMap);
 
         this.state = {
@@ -203,7 +207,7 @@ class MyTodoListEditor extends React.Component {
 
     blockStyleFn(block) {
         switch (block.getType()) {
-          case TODO_TYPE:
+          case TODO_BLOCK:
             return 'block block-todo';
           default:
             return 'block';
@@ -283,7 +287,7 @@ Returns default block-level metadata for various block type. Empty object otherw
 */
 const getDefaultBlockData = (blockType, initialData = {}) => {
   switch (blockType) {
-    case TODO_TYPE: return { checked: false };
+    case TODO_BLOCK: return { checked: false };
     default: return initialData;
   }
 };
@@ -334,7 +338,7 @@ handleBeforeInput(str) {
     const blockType = currentBlock.getType();
     const blockLength = currentBlock.getLength();
     if (blockLength === 1 && currentBlock.getText() === '[') {
-      this.onChange(resetBlockType(editorState, blockType !== TODO_TYPE ? TODO_TYPE : 'unstyled'));
+      this.onChange(resetBlockType(editorState, blockType !== TODO_BLOCK ? TODO_BLOCK : 'unstyled'));
       return true;
     }
     return false;
