@@ -162,6 +162,7 @@ At this point, your page should automatically reload and you should be able to s
 You will be able to type text into the editor, perform undo/redo using keyboard but you won’t be able to add style to the text like bold, italic etc.
 
 You can get the source code from this [GitHub repo](https://github.com/brijeshb42/draft-text-editor-tutorial) . The code for this tutorial can be run from the `part1` tag. After cloning the repo, you can do
+
 ```bash
 git checkout part1
 ```
