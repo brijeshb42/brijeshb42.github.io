@@ -70,7 +70,7 @@ npm install draft-js draft-js-plugins-editor --save
 This will install both the libraries and update the `package.json` file.
 Now, let us implement the initial barebones editor where you can place your cursor and start writing some text. It won’t have any other features yet.
 
-Open `src/App.js` file and remove all the initial code and add the following code (code explanation will be done using code comments beside the code) —
+Open `src/App.js` file and remove all the initial code and add the following code —
 
 ```javascript
 import 'draft-js/dist/Draft.css';
