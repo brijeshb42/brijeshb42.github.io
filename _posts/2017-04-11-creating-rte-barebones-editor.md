@@ -24,7 +24,8 @@ In this tutorial series, we will be creating a Rich Text Editor (RTE) using [Dra
 
 #### Prerequisite Knowledge –
 
-* You should have built atleast one project in React (assuming that you already know JS).
+* You should have built atleast one project in `React` (assuming that you already know JS).
+* You should also be familiar with `git` if you want to checkout the source code at every stage of the tutorial.
 
 #### What you need ?
 
@@ -41,6 +42,7 @@ npm install -g create-react-app
 After installation, a `create-react-app` command will be available to you to create your project.
 
 Let's create our project. Run this command in a directory of your liking —
+
 ```bash
 create-react-app my-text-editor
 ```
@@ -48,6 +50,7 @@ create-react-app my-text-editor
 This will create a basic project in `my-text-editor` directory and install all the necessary initial dependencies. We will install our own dependencies as we require them.
 
 Now, you can move into the directory and start the dev server using —
+
 ```bash
 cd my-text-editor
 npm start
@@ -72,7 +75,7 @@ Now, let us implement the initial barebones editor where you can place your curs
 
 Open `src/App.js` file and remove all the initial code and add the following code —
 
-```javascript
+{% highlight javascript linenos %}
 import 'draft-js/dist/Draft.css';
 
 import './App.css';
@@ -121,7 +124,7 @@ class MyEditor extends React.Component {
 }
 
 export default MyEditor;
-```
+{% endhighlight %}
 
 Lets see what the above code is doing —
 
@@ -140,22 +143,22 @@ Lets also add some styling to make the editor look slightly better. It is pretty
 
 Replace the contents of `src/index.css` with this —
 
-```css
+{% highlight css linenos %}
 body {
   margin: 0;
   padding: 10px;
   font-family: 'Georgia', serif;
 }
-```
+{% endhighlight %}
 
 and that of  `src/App.css` with this —
 
-```css
+{% highlight css linenos %}
 .editor {
   width: 600px;
   margin: 0 auto;
 }
-```
+{% endhighlight %}
 
 You can also remove the `src/logo.svg` file as it is not needed. And since unit testing is a tutorial in itself, I won’t be getting into that. You can also remove the `src/App.test.js` file.
 
