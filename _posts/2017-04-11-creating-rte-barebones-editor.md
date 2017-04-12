@@ -24,7 +24,7 @@ In this tutorial series, we will be creating a Rich Text Editor (RTE) using [Dra
 
 #### Prerequisite Knowledge –
 
-* You should have built atleast one project in `React` (assuming that you already know JS).
+* You should have built atleast one project in `React` (assuming that you already know JS) in ES6.
 * You should also be familiar with `git` if you want to checkout the source code at every stage of the tutorial.
 
 #### What you need ?
