@@ -114,8 +114,6 @@ blockquote {
     border-left: 4px solid $grey-color-light;
     padding-left: $spacing-unit / 4;
     font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
 
     > :last-child {
         margin-bottom: 0;
@@ -208,4 +206,12 @@ pre {
             fill: $grey-color;
         }
     }
+}
+
+kbd {
+    display: inline-block;
+    padding: 0px 4px;
+    background: #fafafa;
+    border-radius: 3px;
+    border: 1px solid #ccc;
 }

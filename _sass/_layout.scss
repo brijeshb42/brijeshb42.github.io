@@ -436,6 +436,22 @@
     }
 }
 
+table {
+    width: 100%;
+    border: 1px solid #eee;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+    thead {
+        background: #fafafa;
+    }
+
+    td, th {
+        border: 1px solid #eee;
+        padding: 5px;
+    }
+}
+
 .post {
     footer {
         border-top: 1px solid #eee;
