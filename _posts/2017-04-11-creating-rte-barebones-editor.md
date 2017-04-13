@@ -177,3 +177,10 @@ git checkout part1
 and you will be able to see the code upto this point.
 
 In the 2nd part of the tutorial, we will be adding features to add some basic styling to the text using keyboard.
+
+---
+
+List of tutorials in this series –
+
+1. Part 1 - Barebones Editor
+2. Part 2 - [Text Styling](http://bitwiser.in/2017/04/13/creating-rte-part-2-text-styling.html)

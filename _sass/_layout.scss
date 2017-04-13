@@ -452,6 +452,26 @@ table {
     }
 }
 
+hr {
+    border: none;
+    background: #ccc;
+    min-height: 3px;
+    max-width: 200px;
+    margin: 10px auto;
+}
+
+code {
+    table {
+        margin-bottom: 5px;
+        border: none;
+
+        td, th {
+            padding: 0;
+            border: none;
+        }
+    }
+}
+
 .post {
     footer {
         border-top: 1px solid #eee;
