@@ -24,7 +24,7 @@ The way `Draft-js` works is that instead of directly relying on browser's conten
 
 Now that we have understood how draft-js works, let's start by creating a plugin that handles keyboard shortcuts mentioned above. `Draft-js` has a utility method that detects common key combinations and emits desired signal strings. For example, when <kbd>CMD</kbd>+<kbd>B</kbd> is pressed on Mac, it emits string - `bold`. So we will be using this utility method to add basic styling to text using keyboard.
 
-Simplest `draft-plugin-plugin` is just on object with all any or all the handlers that you want to use. We will be using the `keyBindingFn` handler of `Editor` to add B, I, U styling. Let's start by creating a `plugins` directory inside `src`. Now create a file called `basicTextStylePlugin.js` inside `plugins` and add the following code –
+Simplest `draft-plugin-plugin` is just on object with all or some of the handlers that you want to use. We will be using the `keyBindingFn` handler of `Editor` to add B, I, U styling. Let's start by creating a `plugins` directory inside `src`. Now create a file called `basicTextStylePlugin.js` inside `plugins` and add the following code –
 
 {% highlight javascript linenos %}
 import {
