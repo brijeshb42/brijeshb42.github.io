@@ -6,7 +6,7 @@ date: 2017-04-13 04:55:00 PM
 tags: [react, draftjs, rte, tutorial]
 ---
 
-In the first part of the [tutorial](bitwiser.in/2017/04/11/creating-rte-barebones-editor.html), we built the simplest form of the text editor where we can just type some text. In this part, we will be adding features to add basic text styling to the characters.
+In the first part of the [tutorial](http://bitwiser.in/2017/04/11/creating-rte-barebones-editor.html), we built the simplest form of the text editor where we can just type some text. In this part, we will be adding features to add basic text styling to the characters.
 
 We will start by adding a functionality where one can add **bold**, *italic* and underline styles to selected text by pressing the stand keyboard shortcuts for those, i.e
 
