@@ -8,7 +8,7 @@ tags: [react, draftjs, rte]
 
 In this tutorial series, we will be creating a Rich Text Editor (RTE) using [Draft-js](https://draftjs.org/), [draft-js-plugins](https://www.draft-js-plugins.com) and [React](https://facebook.github.io/react/).
 
-**Draft-js** is a framework that you can use to build rich text editors with customomised funcationalities. It stores the editor data in a json structure that you can use to have full control over the rendered HTML.
+**Draft-js** is a framework that you can use to build rich text editors with customised functionalities. It stores the editor data in a json structure that you can use to have full control over the rendered HTML.
 
 **draft-js-plugins** is a wrapper over *Draft-js* and provides easy way to create and use plugins with specific functionalities.
 
@@ -24,7 +24,7 @@ In this tutorial series, we will be creating a Rich Text Editor (RTE) using [Dra
 
 #### Prerequisite Knowledge –
 
-* You should have built atleast one project in `React` (assuming that you already know JS) in ES6.
+* You should have built at least one project in `React` (assuming that you already know JS) in ES6.
 * You should also be familiar with `git` if you want to checkout the source code at every stage of the tutorial.
 
 #### What you need ?

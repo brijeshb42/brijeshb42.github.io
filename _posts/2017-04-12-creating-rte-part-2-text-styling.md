@@ -137,11 +137,11 @@ class MyEditor extends React.Component {
 export default MyEditor;
 {% endhighlight %}
 
-Now, you can open your dev server @ `http://localhost:3000` where you will be able to select some typed text abd press <kbd>CMD</kbd>+<kbd>B</kbd> to make the selected text **bold**.
+Now, you can open your dev server @ `http://localhost:3000` where you will be able to select some typed text and press <kbd>CMD</kbd>+<kbd>B</kbd> to make the selected text **bold**.
 
 ![Finished editor part 2](https://res.cloudinary.com/beetoo/image/upload/v1492082450/rte/part2-editor.gif)
 
-At this point or even at the end of previous tutorial, you may have gotten a warning message in the console like this `Warning: Accessing PropTypes via the main React package is deprecated. Use the prop-types package from npm instead.`. This is because we are using the latest version of `React` from which `Proptypes` have been removed to another package called `prop-types` and other libraries (`draft-js` and `draft-js-plugins`) are using the old `PropTypes`. This is nothing to be worried about.
+At this point or even at the end of previous tutorial, you may have gotten a warning message in the console like this `Warning: Accessing PropTypes via the main React package is deprecated. Use the prop-types package from npm instead.`. This is because we are using the latest version of `React` from which `PropTypes` have been removed to another package called `prop-types` and other libraries (`draft-js` and `draft-js-plugins`) are using the old `PropTypes`. This is nothing to be worried about.
 
 This completes the 2nd part of the tutorial. In next part, we will learn about `entities` and implement adding a link to the selected text.
 
