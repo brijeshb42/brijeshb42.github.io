@@ -185,6 +185,8 @@ class MyEditor extends React.Component {
 export default MyEditor;
 {% endhighlight %}
 
+In the above code, the order of the plugins in the `this.plugins` array is very important. If the `basicTextStylePlugin` was before `addLinkPlugin`, the `keyBindingFn` method of `addLinkPlugin` will never be called. That is because if you study the `keyBindingFn` of `basicTextStylePlugin`, you will see that it always returns a string by using the `getDefaultKeyBinding` function available in `draft-js`. So, the `keyBindingFn` of `addLinkPlugin` will never be called. That is why we first use the `addLinkPlugin` then the other one as `keyBindingFn` will return a string only if the key combination matches to <kbd>CMD/CTRL</kbd> + <kbd>K</kbd>. In other cases, nothing is returned and `keyBindingFn` of `basicTextStylePlugin` takes over.
+
 Now, type some text, select it and press <kbd>CMD/CTRL</kbd> + <kbd>K</kbd>, type a link and press <kbd>ENTER</kbd>. The selected text should show up as a link. If it does not, read away. I have encountered this bug while using `draft-js-plugins-editor` where before rendering the `Editor` its decorator is set to `null`. If the decorator is `null`, `Draft` won't know how to render a link entity. To prevent this, you should change the `onChange` method of `MyEditor` to this -
 
 {% highlight javascript linenos %}
