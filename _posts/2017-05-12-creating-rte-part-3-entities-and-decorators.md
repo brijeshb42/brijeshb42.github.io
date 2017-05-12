@@ -238,3 +238,11 @@ handleKeyCommand(command, editorState, { getEditorState, setEditorState})
 ```
 >
 and also modify the use of `editorState` inside the method.
+
+---
+
+List of tutorials in this series –
+
+1. Part 1 - [Barebones Editor](http://bitwiser.in/2017/04/11/creating-rte-barebones-editor.html)
+2. Part 2 - [Text Styling](http://bitwiser.in/2017/04/13/creating-rte-part-2-text-styling.html)
+3. Part 3 - Entities and decorators
