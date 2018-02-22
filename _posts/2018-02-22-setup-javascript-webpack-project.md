@@ -512,4 +512,5 @@ This part concludes the usage of importing `css` files in `js`. It can be easily
 -----------------
 
 > Part 3 will integrate eslint to lint your files
+
 > Part 4 will update this project to start developing ReactJS apps.
