@@ -93,7 +93,7 @@ module.exports = {
 
 Now, you can run this command for webpack to load the entry file and create a bundled js file in `dist` directory in the root of your project directory.
  
-```./node_modules/.bin/webpack```
+`./node_modules/.bin/webpack`
 
 This is the build command that will bundle up all the dependencies and create a `bundle.js` file as specified in the `output` option of webpack config file. After running this command, you can see a `bundle.js` file in `dist`. You can not load this js file yet as you first have to have an html file. Browser will load that file which in turn will load the js file.
  You can manually create an `index.html` file in `dist` with this content.
