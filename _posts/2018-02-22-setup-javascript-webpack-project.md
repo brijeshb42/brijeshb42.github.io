@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Setup a javascript project using webpack with"
+title: "Setup a ES6 javascript project using webpack and babel"
 cover: "https://res.cloudinary.com/beetoo/image/upload/v1519315520/js-webpack-babel_peqovw.png"
 date: 2018-02-22 09:30:00 PM
 tags: [javascript, webpack, babel, es6, tutorial]
