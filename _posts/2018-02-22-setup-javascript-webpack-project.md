@@ -129,7 +129,7 @@ This is a webpack plugin that automatically generates the `index.html` file in `
  
 After this, you can run the build command again -
 
-```./node_modules/.bin/webpack```
+`./node_modules/.bin/webpack`
 
 This will now create and extra `index.html` file in `dist` directory with proper script tags to include `bundle.js`. This can now be opened in browser directly and it'll work like before, except that you didn't have to create it yourself. 
 
