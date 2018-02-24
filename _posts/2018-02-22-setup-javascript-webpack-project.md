@@ -61,7 +61,7 @@ This will create a `package.json` file in `hello-world` directory. `package.json
 Now add webpack and dev-server -
 
 ```bash
-npm install webpack --save-dev
+npm install webpack webpack-dev-server --save-dev
 ```
 
 at the time of writing this, the version of webpack installed was `3.11.1`.
@@ -507,7 +507,91 @@ This disables `extractCss` in developement mode in which case, `style` tag is us
 
 Now running `npm run build` will create 3 files in `dist` - `bundle.js`, `index.css` and `index.html`.
 
-This part concludes the usage of importing `css` files in `js`. It can be easily modified to include css preprocessors like `scss`.
+##### Update - Adding scss support
+
+Let's add `scss` parsing support to the webpack config file. For this you'll need `sass-loader` which in turn needs `node-sass`. Install these using -
+
+`npm install node-sass sass-loader --save-dev`
+
+Now, update `webpack.config.js` so that webpack knows how to process imported scss files -
+
+```diff
+ const path = require('path');
+ const HtmlWebpackPlugin = require('html-webpack-plugin');
+ const ExtractTextPlugin = require('extract-text-webpack-plugin');
+ 
+ const env = process.env.NODE_ENV || 'development';
+ const isDev = env === 'development';
+ const isProd = env === 'production';
+
+-const extractCss = new ExtractTextPlugin({
++const extractScss = new ExtractTextPlugin({
+   filename: 'index.css',
+   disable: isDev
+ });
+ 
+ module.exports = {
+   entry: {
+     bundle: './src/index.js'
+   },
+   output: {
+     path: path.resolve(__dirname, 'dist'),
+     filename: 'bundle.js'
+   },
+   plugins: [
+     new HtmlWebpackPlugin(),
+-    extractCss
++    extractScss
+   ],
+   module: {
+     rules: [{
+       test: /\.js$/,
+       exclude: /node_modules/,
+       use: 'babel-loader'
+     }, {
+-      test: /\.css$/,
++      test: /(\.css|\.scss)$/,
+       exclude: /node_modules/,
+-      use: extractCss.extract({
++      use: extractScss.extract({
+         use:[
+-          {loader: 'css-loader'}
++          {loader: 'css-loader'},
++          {loader: 'sass-loader'}
+         ],
+         fallback: 'style-loader'
+       })
+     }]
+   }
+ };
+ ```
+
+Now to test this out, rename `index.css` to `index.scss` and update its content with basic scss nesting -
+
+```css
+body {
+  p {
+    color: red;
+  }
+}
+```
+
+Update the import in `index.js` -
+
+```diff
+ import message from './message';
+-import './index.css';
++import './index.scss';
+
+ const paragraph = document.createElement('p');
+ paragraph.innerHTML = message;
+
+ document.body.prepend(paragraph);
+```
+
+Test this by running `npm run dev` and open the url in browser.
+
+This part concludes the usage of importing `css` and `scss` files in `js`.
 
 -----------------
 
