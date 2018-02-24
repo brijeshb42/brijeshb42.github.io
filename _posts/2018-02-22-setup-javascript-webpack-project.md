@@ -507,7 +507,7 @@ This disables `extractCss` in developement mode in which case, `style` tag is us
 
 Now running `npm run build` will create 3 files in `dist` - `bundle.js`, `index.css` and `index.html`.
 
-##### Update - Adding scss support
+#### Update - Adding scss support
 
 Let's add `scss` parsing support to the webpack config file. For this you'll need `sass-loader` which in turn needs `node-sass`. Install these using -
 
