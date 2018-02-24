@@ -568,7 +568,7 @@ Now, update `webpack.config.js` so that webpack knows how to process imported sc
 
 Now to test this out, rename `index.css` to `index.scss` and update its content with basic scss nesting -
 
-```css
+```scss
 body {
   p {
     color: red;
