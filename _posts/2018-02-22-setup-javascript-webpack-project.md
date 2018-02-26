@@ -6,6 +6,10 @@ date: 2018-02-22 09:30:00 PM
 tags: [javascript, webpack, babel, es6, tutorial]
 ---
 
+1. [Setup](#part-1)
+2. [Styling](#part-2)
+3. [Linting](#part-3)
+
 Whenever someone learns a new programming language, there is a 99% chance that their first program is going to be a **Hello World** program. In this proverbial program, they are supposed to print `Hello World` on their screen/console. Depending on the language, it can range from 1 line program to multiline just for printing this **Hello World**.
 
 In Javascript, in olden times (4-5 years back), one would simply create an HTML file with this content and open it up in their browsers to see **Hello World** printed in their browser windows (and also in the browser console).
@@ -595,6 +599,193 @@ This part concludes the usage of importing `css` and `scss` files in `js`.
 
 -----------------
 
-> Part 3 will integrate eslint to lint your files
+## Part 3
+
+As the codebase of a project increases in size, it can become difficult to maintain a strict coding guideline if not taken care of at early stage. Also, as more people start contributing to a single project, they may bring their own style of coding which can result in code in various files looking different and it becomes painful for new developers to decide which style to follow. This problem is taken care of by using linters. They help in following a single strict guideline for writing code. Linters in javascript show many helpful messages like unused variables, missing semicolon (this may not be a problem in some projects), codes exceeding maximum permitted length, etc. Let's update our project to use `eslint` to throw error when a particular guideline is not followed. For this, we need `eslint` and `eslint-loader`. Install them using -
+
+`npm install eslint eslint-loader --save-dev`
+
+Now update `webpack.config.js` to inform webpack to use `eslint-loader` before passing it through `babel-loader` -
+
+```diff
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const env = process.env.NODE_ENV || 'development';
+const isDev = env === 'development';
+const isProd = env === 'production';
+
+const extractScss = new ExtractTextPlugin({
+  filename: 'index.css',
+  disable: isDev
+});
+
+ module.exports = {
+   entry: {
+     bundle: './src/index.js'
+   },
+   output: {
+     path: path.resolve(__dirname, 'dist'),
+     filename: 'bundle.js'
+   },
+   plugins: [
+     new HtmlWebpackPlugin(),
+     extractScss
+   ],
+   module: {
+     rules: [{
++      enforce: 'pre',
++      test: /\.js$/,
++      exclude: /node_modules/,
++      use: 'eslint-loader'
++    }, {
+       test: /\.js$/,
+       exclude: /node_modules/,
+       use: 'babel-loader'
+     }, {
+       test: /(\.css|\.scss)$/,
+       exclude: /node_modules/,
+       use: extractScss.extract({
+         use:[
+           {loader: 'css-loader'},
+           {loader: 'sass-loader'}
+         ],
+         fallback: 'style-loader'
+       })
+     }]
+   }
+ };
+```
+
+Create a new file `.eslintrc` at the top level of your project (alongside `package.json`). In this file, you can define your own custom rules and the parser for `eslint` to follow.
+
+```json
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "extends": "eslint:recommended"
+}
+```
+
+`ecmaVersion` allows eslint to recognise ES6 features, `sourceType: module` allows the usage of `import` and `export` keywords. By default, there are no rules set for `eslint`. So `"extends": "eslint:recommended"` tells `eslint` to use default recommended rules.
+
+At this point, you can run `npm run dev`. In the console, you'll see that there are 2 same type of errors -
+
+```txt
+4:19  error  'document' is not defined  no-undef
+7:1   error  'document' is not defined  no-undef
+```
+
+This tells that the variable `document` has not been defined (`no-undef`) anywhere but is still being used. This can be fixed in 2 ways. To fix this, you'll need to use the `globals` key in `.eslintrc`. Update your `.eslintrc` -
+
+```diff
+ {
+   "parserOptions": {
+     "ecmaVersion": 6,
+     "sourceType": "module"
+   },
+-  "extends": "eslint:recommended"
++  "extends": "eslint:recommended",
++. "globals": {
+      "document": true
+    }
+ }
+```
+
+This tells `eslint` that the variable `document` is global and will be provided by the JS environment (in this case, browser). Now you can run `npm run dev` without any error. You can also add a linting command to `package.json` to see lint error independently of webpack. Update `package.json` -
+
+```diff
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+-   "dev": "NODE_ENV=development webpack-dev-server --content-base dist --hot"
++   "dev": "NODE_ENV=development webpack-dev-server --content-base dist --hot",
++   "lint": "eslint ./src --ext .js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.9",
+    "eslint": "^4.18.1",
+    "eslint-loader": "^2.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
+```
+
+Now you can run `npm run lint` in your console and check for any linting errors regardless of whether you are bundling the project or not. This can also be used in git pre-commit hooks to not allow commits if `eslint` throws any error. `eslint ./src --ext .js` tells `eslint` to check for errors in all files in `src` dirctory with `js` extension. You can also add an optional `--fix` option to this command which automatically tries to fix errors so that you don't have to.
+
+You can also add your own rules in `.eslintrc` file as per your requirements. The `eslint:recommended` option does not allow you to use `console.log` in your code (recommended way is to use a logging module). You can add a rule to tell `eslint` to show a warning in `console.log` statements instead of an error. Update `.eslintrc` file -
+
+```diff
+ {
+   "parserOptions": {
+     "ecmaVersion": 6,
+     "sourceType": "module"
+   },
+   "extends": "eslint:recommended",
+   "globals": {
+-    "document": true
++    "document": true,
++    "console": true
+-  }
++  },
++  "rules": {
++    "no-console": 1
++  }
+ }
+```
+
+`"no-console": 1` tells `eslint` to show a warning instead of an error. Other values are `0` (turn off `eslint` for this rule) and `2` (throw an error if this rule is violated). There are some standard javascript style guides that a lot of companies use (instead of the default `eslint:recommended`). One of them is airbnb's [javascript style guide](https://github.com/airbnb/javascript) which adds a lot of well accepted linting rules. You can use this instead of the current one. Let's add that to our configuration. It requires the installation of an extra `eslint-plugin-import` dependency. Install `eslint-config-airbnb-base` and it's dependencies using -
+
+`npx install-peerdeps --dev eslint-config-airbnb-base`
+
+Now update `.eslintrc` -
+
+```diff
+ {
+-  "parserOptions": {
+-   "ecmaVersion": 6,
+-   "sourceType": "module"
+-  },
+-  "extends": "eslint:recommended",
++  "extends": "airbnb-base",
+   "globals": {
+     "document": true,
+     "console": true
+   },
+   "rules": {
+     "no-console": 1
+   }
+ }
+```
+
+`airbnb-base` has `parserOptions` internally. So it has been removed. Now, when you run `npm run dev`, you'll get an error-
+
+```text
+...hello-world/src/message.js
+1:16  error  Strings must use singlequote  quotes
+```
+
+That's because `airbnb-base` has a rule to use single quotes for strings instead of double quotes. Running `npm run lint` with `--fix` option will automatically change `"` to `'` in `src/message.js`.
+
+This concludes the usage of `eslint` to enforce code quality in your code.
 
 > Part 4 will update this project to start developing ReactJS apps.
