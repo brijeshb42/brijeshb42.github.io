@@ -6,6 +6,8 @@ date: 2018-02-22 09:30:00 PM
 tags: [javascript, webpack, babel, es6, tutorial]
 ---
 
+Table of contents -
+
 1. [Setup](#part-1)
 2. [Styling](#part-2)
 3. [Linting](#part-3)
