@@ -171,7 +171,7 @@ To make the build command shorter, lets create an alias inside `package.json` so
 
 Till now, webpack bundles the files and exits. This is good when you just want to bundle and deploy to your local or remote server. But during development, this can get frustrating really quickly. To overcome this frustration, you'll use `webpack-dev-server` which constantly watches your files for changes and refreshes the page in browser instantly. It also starts a development server inside `dist` so the html file is loaded from a server instead of a file system (just in case you are using ajax in your js which does not work when opened from filesystem). Install it using -
 
-`npm install webpack-dev-server --content-base dist`
+`npm install webpack-dev-server`
 
 This starts the development server with `dist` as the base directory. The default url is `http://localhost:8080`. Opening this url in your browser will load the `index.html` file and log `Hello World` in the console. Now if you update your console log from `Hello World` to `Hi World` inside `src/index.js`, `webpack-dev-server` will automatically reload the browser and you will be able to see the new output.
 
