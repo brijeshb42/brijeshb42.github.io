@@ -67,10 +67,12 @@ This will create a `package.json` file in `hello-world` directory. `package.json
 Now add webpack and dev-server -
 
 ```bash
-npm install webpack webpack-dev-server --save-dev
+npm install webpack@3.11.1 webpack-dev-server --save-dev
 ```
 
 at the time of writing this, the version of webpack installed was `3.11.1`.
+
+> Edit: the version has been added later in the post because since this tutorial has been published, `webpack` version 4 has been released which has a slightly different configuration and might break this tutorial's setup.
 
 Create a `src` directory inside your project folder and then create `index.js` file inside it.
 
