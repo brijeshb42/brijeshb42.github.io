@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
               var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
               dsq.setAttribute('data-timestamp', +new Date());
               dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              dsq.onerror = function() {dt.innerHTML = 'Could not load comments';};
               (document.head || document.body).appendChild(dsq);
           })();
       }
