@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Creating a rich text editor - Part 3 - Entities and decorators"
-cover: "http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/2abfadcb-d409-41d8-8a73-d9c07f07141d.png"
+cover: "https://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/2abfadcb-d409-41d8-8a73-d9c07f07141d.png"
 date: 2017-05-11 09:15:00 PM
 tags: [react, draftjs, rte, tutorial]
 ---
