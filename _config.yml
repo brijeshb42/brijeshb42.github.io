@@ -12,7 +12,7 @@ email: brijesh@bitwiser.in
 description: > # this means to ignore newlines until "baseurl:"
   A blog about Life, Universe and Coding. But mostly Coding.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://bitwiser.in" # the base hostname & protocol for your site
+url: "https://bitwiser.in" # the base hostname & protocol for your site
 twitter_username: brijeshb42
 github_username:  brijeshb42
 sass:
