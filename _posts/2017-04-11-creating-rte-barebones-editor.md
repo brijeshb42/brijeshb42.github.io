@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Creating a rich text editor - Part 1 - Barebones Editor"
-cover: "http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/2abfadcb-d409-41d8-8a73-d9c07f07141d.png"
+cover: "https://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/2abfadcb-d409-41d8-8a73-d9c07f07141d.png"
 date: 2017-04-11 11:30:00 PM
 tags: [react, draftjs, rte]
 ---
