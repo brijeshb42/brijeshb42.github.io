@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Creating a rich text editor - Part 2 - Text Styling"
-cover: "http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/2abfadcb-d409-41d8-8a73-d9c07f07141d.png"
+cover: "https://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/2abfadcb-d409-41d8-8a73-d9c07f07141d.png"
 date: 2017-04-13 04:55:00 PM
 tags: [react, draftjs, rte, tutorial]
 ---
