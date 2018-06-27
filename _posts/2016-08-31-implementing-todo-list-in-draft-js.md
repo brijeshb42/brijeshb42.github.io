@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Implementing todo list in Draft.js"
-cover: "http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/2abfadcb-d409-41d8-8a73-d9c07f07141d.png"
+cover: "https://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/2abfadcb-d409-41d8-8a73-d9c07f07141d.png"
 date: 2016-08-31 05:30:00
 tags: [react, draftjs]
 ---
