@@ -2,7 +2,7 @@
 layout: post
 title: "Add Google Oauth2 login in your flask web app"
 color: light-blue
-cover: "http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/Artboard%201.png"
+cover: "https://res.cloudinary.com/beetoo/image/upload/v1538725439/Artboard_1_baajan.png"
 date: 2015-09-09 14:40:00
 categories: 
 tags: [google, oauth2, flask]
