@@ -17,22 +17,22 @@ To get started, first we have to create a project in Google Developers Console t
 1. First go to [Google Developers Console](https://console.developers.google.com/). Sign in using your Google credentials if you haven't already. There will be a list of projects(if you have previously created any).
 
 2. Click on **Create Project** to create a new project.
-![Project Screen](http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/1.png)
+![Project Screen](https://res.cloudinary.com/beetoo/image/upload/v1538725935/googflask/0_LbjTtoiOKxJ7Goja.png)
 
 3. Provide a project name in the dialog box and press enter. For explanation purposes, lets say the project name is **test-project-123xyz**. `test-project-123xyz` will appear in the list of projects after creation.
-![Create New projects](http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/2.png)
+![Create New projects](https://res.cloudinary.com/beetoo/image/upload/v1538725985/googflask/0_68HKckuDRB7g3lA5.png)
 
 4. Now go to the project page. Click `APIs and Auth -> Credentials` in the sidebar. Then goto the `OAuth Consent Screen`. Provide the `Product Name`(you can also provide other details but they are optional). `Product Name` is what users see when they are logging into your application using Google.
-![Product Name](http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/3.png)
+![Product Name](https://res.cloudinary.com/beetoo/image/upload/v1538725966/googflask/0_khYIE00Mqx5tambK.png)
 
 5. Now click on the `Credentials` part of the same page. Then click on `Add Credentials` and then select `OAuth 2.0 client ID`.
-![OAuth Credentials](http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/4.png)
+![OAuth Credentials](https://res.cloudinary.com/beetoo/image/upload/v1538726086/googflask/0_W2vKPKBaayFVCNNE.png)
 
 6. Select `Application Type` as **Web Application**, Provide a `Name`, `Authorized Javascript origins` and `Authorized redirect URIs` and click on `Create`. During development, we will use `localhost` as our URL. Later, for production, we can add our original URL. The `redirect URIs` is important here as this is the URL the users will be redirected to after Google Login. Make sure that all the urls use `https` protocol as `OAuth2` supports only `https`.
-![Create credentials](http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/cbb41861-fe1e-4e8a-b633-41cf7ba5af54.png)
+![Create credentials](https://res.cloudinary.com/beetoo/image/upload/v1538726127/googflask/0_WVpwB_8QXYdQNRbn.png)
 
 7. After the above step, you will be presented with a dialog box having your `client ID` and `client secret`. Copy both the strings and save in a text file as we will be needing these later.
-![Copy credentials](http://i1051.photobucket.com/albums/s432/brijeshb42/ghost-blog/6.png)
+![Copy credentials](https://res.cloudinary.com/beetoo/image/upload/v1538726158/googflask/0_YD7pfoE9XGuV4mGE.png)
 
 
 ### Creating a User table in Database
